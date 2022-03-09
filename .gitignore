@@ -122,3 +122,9 @@ work_dirs/
 *.pth
 *.py~
 *.sh~
+
+# Images
+# demo/demo1/HEMNES_Coffee_Table_Brown1.jpg
+demo/demo1
+demo/demo2
+demo/demo3

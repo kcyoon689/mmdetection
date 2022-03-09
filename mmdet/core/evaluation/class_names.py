@@ -80,7 +80,9 @@ def coco_classes():
         # 'laptop', 'mouse', 'remote', 'keyboard', 'cell_phone', 'microwave',
         # 'oven', 'toaster', 'sink', 'refrigerator', 'book', 'clock', 'vase',
         # 'scissors', 'teddy_bear', 'hair_drier', 'toothbrush'
-        'table', 'chair', 'drawer'
+        ## 'table', 'chair', 'drawer'
+        'ashcan', 'beer_bottle', 'beer_can', 'bowl', 'camera', 'chair', 'coke', 'faucet', 
+        'football_helmet', 'guitar', 'jug', 'lamp', 'piano', 'pistol', 'pool_table', 'sofa'
     ]
 
 

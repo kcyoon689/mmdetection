@@ -36,7 +36,9 @@ class CocoDataset(CustomDataset):
     #            'mouse', 'remote', 'keyboard', 'cell phone', 'microwave',
     #            'oven', 'toaster', 'sink', 'refrigerator', 'book', 'clock',
     #            'vase', 'scissors', 'teddy bear', 'hair drier', 'toothbrush')
-    CLASSES = ('table', 'chair', 'drawer')
+    ## CLASSES = ('table', 'chair', 'drawer')
+    CLASSES = ('ashcan', 'beer_bottle', 'beer_can', 'bowl', 'camera', 'chair', 'coke', 'faucet', 
+        'football_helmet', 'guitar', 'jug', 'lamp', 'piano', 'pistol', 'pool_table', 'sofa')
 
     PALETTE = [(220, 20, 60), (119, 11, 32), (0, 0, 142), (0, 0, 230),
                (106, 0, 228), (0, 60, 100), (0, 80, 100), (0, 0, 70),

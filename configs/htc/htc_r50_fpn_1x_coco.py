@@ -13,10 +13,12 @@ model = dict(
             num_convs=4,
             in_channels=256,
             conv_out_channels=256,
-            num_classes=183,
+            # num_classes=183,
+            num_classes=16,
             loss_seg=dict(
                 type='CrossEntropyLoss', ignore_index=255, loss_weight=0.2))))
-data_root = 'data/coco/'
+# data_root = 'data/coco/'
+data_root = 'data/ikea/'
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
 train_pipeline = [
@@ -50,7 +52,8 @@ test_pipeline = [
 ]
 data = dict(
     train=dict(
-        seg_prefix=data_root + 'stuffthingmaps/train2017/',
+        # seg_prefix=data_root + 'stuffthingmaps/train2017/',
+        seg_prefix=data_root + 'stuffthingmaps/train2022/',
         pipeline=train_pipeline),
     val=dict(pipeline=test_pipeline),
     test=dict(pipeline=test_pipeline))

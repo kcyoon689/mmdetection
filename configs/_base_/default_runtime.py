@@ -11,7 +11,9 @@ custom_hooks = [dict(type='NumClassCheckHook')]
 
 dist_params = dict(backend='nccl')
 log_level = 'INFO'
-load_from = None
+# load_from = None
+load_from = 'checkpoints/detectors_htc_r101_20e_coco_20210419_203638-348d533b.pth'
+# load_from = 'checkpoints/16class_detectoRS_epoch20.pth'
 resume_from = None
 workflow = [('train', 1)]
 
