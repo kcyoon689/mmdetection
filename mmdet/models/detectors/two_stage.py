@@ -182,6 +182,7 @@ class TwoStageDetector(BaseDetector):
 
         return self.roi_head.simple_test(
             x, proposal_list, img_metas, rescale=rescale)
+            # x, proposal_list, img_metas, rescale=rescale), x
 
     def aug_test(self, imgs, img_metas, rescale=False):
         """Test with augmentations.

@@ -128,3 +128,11 @@ work_dirs/
 demo/demo1
 demo/demo2
 demo/demo3
+demo/cartoon
+demo/output
+demo/feature_map
+demo/test
+demo/test2
+demo/test3
+demo/test4
+wandb/*

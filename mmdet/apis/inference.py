@@ -4,6 +4,7 @@ import warnings
 import mmcv
 import numpy as np
 import torch
+import cv2
 from mmcv.ops import RoIPool
 from mmcv.parallel import collate, scatter
 from mmcv.runner import load_checkpoint
@@ -148,11 +149,21 @@ def inference_detector(model, imgs):
     # forward the model
     with torch.no_grad():
         results = model(return_loss=False, rescale=True, **data)
+        # results, x = model(return_loss=False, rescale=True, **data)
+        # # print(x.shape())
+        # # cv2.imwrite('~/feature.jpg', x)
+        # # print(x[0].size())
+        # x_temp = x[0].squeeze() # torch (256, 200, 304)
+        # x_np = x_temp.permute(1, 2, 0).cpu().numpy() # 200, 304, 256
+        # # cv2.imwrite('~/feature.jpg', x_np[:,:,0:2])
+
 
     if not is_batch:
         return results[0]
+        # return results[0], x_np
     else:
         return results
+        # return results, x_np
 
 
 async def async_inference_detector(model, imgs):
@@ -215,7 +226,7 @@ async def async_inference_detector(model, imgs):
 def show_result_pyplot(model,
                        img,
                        result,
-                       score_thr=0.3,
+                       score_thr=0.1,
                        title='result',
                        wait_time=0,
                        palette=None):
@@ -237,9 +248,10 @@ def show_result_pyplot(model,
         img,
         result,
         score_thr=score_thr,
-        show=True,
+        show=False,
         wait_time=wait_time,
         win_name=title,
         bbox_color=palette,
         text_color=(200, 200, 200),
-        mask_color=palette)
+        mask_color=palette,
+        out_file=img.replace('demo', 'demo/output'))
